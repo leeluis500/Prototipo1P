@@ -6,8 +6,7 @@ import administracion.vista.MDI_Administracion;
 import java.util.List;
 
 /**
- * @author H. Leonel Dominguez C.
- * @github https://github.com/leoneldc
+ * @author leeluis
  */
 public class GenerarPermisos {
 
@@ -22,6 +21,7 @@ public class GenerarPermisos {
         for (UsuarioAplicacion permiso : listadoPermisos) {
             switch (Integer.parseInt(permiso.getIdAplicacion())) {
                 case 30:MDI_Administracion.MnI_UsuarioAplicacion.setVisible(true);break;
+                case 9:MDI_Administracion.Mnt_Producto.setVisible(true);break;
             }
         }
 

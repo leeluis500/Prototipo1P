@@ -19,6 +19,8 @@ public class MDI_Administracion extends javax.swing.JFrame {
     public static JLabel Jl_logo = new JLabel();
     
     private Asn_UsuarioAplicacion asn_usuarioAplicacion;
+    private Mnt_Producto Mnt_prod;
+    
     public MDI_Administracion() {
         initComponents();
         InicioSesion();
@@ -64,6 +66,8 @@ public class MDI_Administracion extends javax.swing.JFrame {
         Sbm_actualizarPermisos = new javax.swing.JMenu();
         Sbm_archivos = new javax.swing.JMenu();
         Sbm_catalogo = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
+        Mnt_Producto = new javax.swing.JMenuItem();
         Sbm_procesos = new javax.swing.JMenu();
         Mnu_procesos = new javax.swing.JMenu();
         MnI_UsuarioAplicacion = new javax.swing.JMenuItem();
@@ -107,6 +111,19 @@ public class MDI_Administracion extends javax.swing.JFrame {
 
         Sbm_catalogo.setText("Catalogo");
         Sbm_catalogo.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
+
+        jMenu1.setText("Mantenimientos");
+
+        Mnt_Producto.setText("Producto");
+        Mnt_Producto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Mnt_ProductoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(Mnt_Producto);
+
+        Sbm_catalogo.add(jMenu1);
+
         Mnb_menu.add(Sbm_catalogo);
 
         Sbm_procesos.setText("Procesos");
@@ -174,6 +191,18 @@ public class MDI_Administracion extends javax.swing.JFrame {
         asn_usuarioAplicacion.toFront();
     }//GEN-LAST:event_MnI_UsuarioAplicacionActionPerformed
 
+    private void Mnt_ProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mnt_ProductoActionPerformed
+        // TODO add your handling code here:
+        Mnt_prod = new Mnt_Producto();
+
+        Jdp_contenedor.add(Mnt_prod);
+        Dimension desktopSize = Jdp_contenedor.getSize();
+        Dimension FrameSize = Mnt_prod.getSize();
+        Mnt_prod.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        Mnt_prod.setVisible(true);
+        Mnt_prod.toFront();
+    }//GEN-LAST:event_Mnt_ProductoActionPerformed
+
     public static void main(String args[]) {
         //FLATLAF
         FlatLightLaf.setup();
@@ -191,6 +220,7 @@ public class MDI_Administracion extends javax.swing.JFrame {
     private javax.swing.JDesktopPane Jdp_contenedor;
     public static javax.swing.JMenuItem MnI_UsuarioAplicacion;
     public static javax.swing.JMenuBar Mnb_menu;
+    public static javax.swing.JMenuItem Mnt_Producto;
     public static javax.swing.JMenu Mnu_procesos;
     public static javax.swing.JMenu Sbm_actualizarPermisos;
     public static javax.swing.JMenu Sbm_archivos;
@@ -198,5 +228,6 @@ public class MDI_Administracion extends javax.swing.JFrame {
     public static javax.swing.JMenu Sbm_catalogo;
     public static javax.swing.JMenu Sbm_herramientas;
     public static javax.swing.JMenu Sbm_procesos;
+    private javax.swing.JMenu jMenu1;
     // End of variables declaration//GEN-END:variables
 }
